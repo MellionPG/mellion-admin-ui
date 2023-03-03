@@ -17,10 +17,22 @@
       </router-link>
     </scroll-pane>
     <ul v-show="visible" :style="{left:left+'px',top:top+'px'}" class="contextmenu">
-      <li @click="refreshSelectedTag(selectedTag)">Refresh</li>
-      <li v-if="!isAffix(selectedTag)" @click="closeSelectedTag(selectedTag)">Close</li>
-      <li @click="closeOthersTags">Close Others</li>
-      <li @click="closeAllTags(selectedTag)">Close All</li>
+      <li @click="refreshSelectedTag(selectedTag)">
+        <i class="el-icon-refresh" />
+        刷新页面
+      </li>
+      <li v-if="!isAffix(selectedTag)" @click="closeSelectedTag(selectedTag)">
+        <i class="el-icon-close" />
+        关闭当前
+      </li>
+      <li @click="closeOthersTags">
+        <i class="el-icon-remove-outline" />
+        关闭其他
+      </li>
+      <li @click="closeAllTags(selectedTag)">
+        <i class="el-icon-circle-close" />
+        关闭全部
+      </li>
     </ul>
   </div>
 </template>
@@ -225,7 +237,7 @@ export default {
         margin-right: 15px;
       }
       &.active {
-        background-color: #42b983;
+        background-color: #409EFF;
         color: #fff;
         border-color: #42b983;
         &::before {

@@ -1,7 +1,9 @@
 <template>
   <el-dropdown trigger="click" @command="handleSetSize">
     <div>
-      <svg-icon class-name="size-icon" icon-class="size" />
+      <el-tooltip content="布局大小" effect="dark" placement="bottom">
+        <svg-icon class-name="size-icon" icon-class="size" />
+      </el-tooltip>
     </div>
     <el-dropdown-menu slot="dropdown">
       <el-dropdown-item v-for="item of sizeOptions" :key="item.value" :disabled="size===item.value" :command="item.value">
@@ -17,10 +19,10 @@ export default {
   data() {
     return {
       sizeOptions: [
-        { label: 'Default', value: 'default' },
-        { label: 'Medium', value: 'medium' },
-        { label: 'Small', value: 'small' },
-        { label: 'Mini', value: 'mini' }
+        { label: '默认', value: 'default' },
+        { label: '中型', value: 'medium' },
+        { label: '小型', value: 'small' },
+        { label: '迷你', value: 'mini' }
       ]
     }
   },
