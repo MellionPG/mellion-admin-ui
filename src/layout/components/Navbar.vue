@@ -23,13 +23,17 @@
         </div>
         <el-dropdown-menu slot="dropdown">
           <router-link to="/profile/index">
-            <el-dropdown-item>个人中心</el-dropdown-item>
+            <el-dropdown-item>
+              <i class="el-icon-user" />
+              <span> 个人中心</span>
+            </el-dropdown-item>
           </router-link>
           <el-dropdown-item @click.native="setting = true">
-            <span>布局设置</span>
+            <i class="el-icon-setting" />
+            <span> 布局设置</span>
           </el-dropdown-item>
           <el-dropdown-item divided @click.native="logout">
-            <span style="display:block;">登出系统</span>
+            <span style="display:block;"><i class="el-icon-circle-close" /> 登出系统</span>
           </el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
